@@ -8,6 +8,8 @@
   "dependencies": {
     "express": "^4.15.2",
     "node-telegram-bot-api": "^0.27.0",
-    "telebot": "^1.0.7"
+    "telebot": "^1.0.7",
+    "telegraf": "^3.6.7",
+    "telegram": "^0.2.0"
   }
 }
