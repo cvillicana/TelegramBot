@@ -1,20 +1,12 @@
-var TelegramBot = require('node-telegram-bot-api');
+var TelegramBot = require('telebot');
 
 var token = '343982108:AAEwO6G-rOgFBzoLduwkGXBj4RGzvC9LHxw';
 // Setup polling way
-var bot = new TelegramBot(token, {polling: true});
-
-// Matches /echo [whatever]
-bot.onText(/\/echo (.+)/, function (msg, match) {
-  var fromId = msg.from.id;
-  var resp = match[1];
-  bot.sendMessage(fromId, resp);
+bot.on('text', msg => {
+  let fromId = msg.from.id;
+  let firstName = msg.from.first_name;
+  let reply = msg.message_id;
+  return bot.sendMessage(fromId, `Welcome, ${ firstName }!`, { reply });
 });
 
-// Any kind of message
-bot.on('message', function (msg) {
-  var chatId = msg.chat.id;
-  // photo can be: a file path, a stream or a Telegram file_id
-  var photo = 'cats.png';
-  bot.sendPhoto(chatId, photo, {caption: 'Lovely kittens'});
-});
+bot.connect();
