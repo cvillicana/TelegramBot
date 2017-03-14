@@ -1,6 +1,5 @@
-var TelegramBot = require('telebot');
-
-var token = '343982108:AAEwO6G-rOgFBzoLduwkGXBj4RGzvC9LHxw';
+const TeleBot = require('telebot');
+const bot = new Telebot('343982108:AAEwO6G-rOgFBzoLduwkGXBj4RGzvC9LHxw');
 // Setup polling way
 bot.on('text', msg => {
   let fromId = msg.from.id;
