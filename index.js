@@ -1,0 +1,2 @@
+require('./TestBot');
+require('./web');
