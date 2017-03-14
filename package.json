@@ -1,0 +1,11 @@
+{
+  "name": "heroku-node",
+  "description": "Our sample Node to Heroku app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.27.0"
+  }
+}
